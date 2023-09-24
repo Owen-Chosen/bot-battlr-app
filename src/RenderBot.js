@@ -1,9 +1,9 @@
 import React from 'react'
 
-function RenderBot({ bot, recruitBot }) {
+function RenderBot({ bot, handleClick }) {
 
   return (
-    <div id={bot.id} className='card' onClick={recruitBot}>
+    <div id={bot.id} className='card' onClick={handleClick}>
       <h2 id={bot.id} style={{color: 'green'}}>{bot.name}</h2>
       <img id={bot.id} src={bot.avatar_url} alt=''
        style={{marginBottom: 15, marginTop: 0}}/>

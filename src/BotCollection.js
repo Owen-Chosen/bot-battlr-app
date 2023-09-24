@@ -8,7 +8,7 @@ function BotCollection({ bots, recruitBot }) {
       <h1 style={{color: 'blueviolet'}}>BOT~COLLECTION</h1>
       {
         bots.map((bot, index) => {
-          return <RenderBot key={index} bot={bot} recruitBot={recruitBot}/>
+          return <RenderBot key={index} bot={bot} handleClick={recruitBot}/>
         })
       }
     </div>

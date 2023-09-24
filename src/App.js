@@ -28,8 +28,12 @@ function App() {
     .then(data => setMyBotArmy([...myBotArmy, data]))
   }
 
-  function disbandBot () {
-
+  function disbandBot (event) {
+    console.log(myBotArmy)
+    setMyBotArmy(myBotArmy.filter((bot) => {
+      if(event.target.id != bot.id) return true
+      else return false
+    }))
   }
 
 

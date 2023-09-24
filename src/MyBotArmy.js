@@ -7,7 +7,7 @@ function MyBotArmy({ myBotArmy, disbandBot }) {
         <h1 style={{color: 'blueviolet'}}>MY~BOT~ARMY</h1>
         {
             myBotArmy.map((bot, index) => {
-                return <RenderBot key={index} bot={bot}/>
+                return <RenderBot key={index} bot={bot} handleClick={disbandBot}/>
             })
         }
     </div>
