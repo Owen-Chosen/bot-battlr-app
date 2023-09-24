@@ -2,6 +2,7 @@ import React from 'react'
 
 function RenderBot({ bot, handleClick }) {
 
+  
   return (
     <div id={bot.id} className='card' onClick={handleClick}>
       <h2 id={bot.id} style={{color: 'green'}}>{bot.name}</h2>
