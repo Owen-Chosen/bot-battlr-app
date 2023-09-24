@@ -43,5 +43,15 @@ b {
 }
 
 .bot-collection {
-  width: 50%;
+  margin-left: 0;
+  width: 70%;
+  text-align: center;
+}
+
+.my-bot-army {
+  position: absolute;
+  width: 30%;
+  margin-left: 73%;
+  margin-right: 3rem;
+  text-align: center;
 }
