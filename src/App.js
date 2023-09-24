@@ -16,20 +16,28 @@ function App() {
 
   function recruitBot (event) {
     const id = event.target.id;
-    fetch(`http://localhost:3000/bots/${id}`,{
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: null
+    let isPresent = false;
+    myBotArmy.forEach(bot => {
+      if (bot.id == id) isPresent = true
     })
-    .then(res => res.json())
-    .then(data => setMyBotArmy([...myBotArmy, data]))
+    if(isPresent) return
+    else {
+      fetch(`http://localhost:3000/bots/${id}`,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: null
+      })
+      .then(res => res.json())
+      .then(data => {
+        setMyBotArmy([...myBotArmy, data]);
+      })
+    }
   }
 
   function disbandBot (event) {
-    console.log(myBotArmy)
     setMyBotArmy(myBotArmy.filter((bot) => {
       if(event.target.id != bot.id) return true
       else return false
